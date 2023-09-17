@@ -1,26 +1,26 @@
-import axios from 'axios'
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import DOMPurify from 'dompurify'
-import './Coin.css'
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import DOMPurify from 'dompurify';
+import './Coin.css';
 
 const Coin = () => {
-  const params = useParams()
-  const [coin, setCoin] = useState({})
+  const params = useParams();
+  const [coin, setCoin] = useState({});
 
-  const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`
+  const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`;
 
   useEffect(() => {
     axios
       .get(url)
       .then((res) => {
-        setCoin(res.data)
-        console.log(res.data)
+        setCoin(res.data);
+        console.log(res.data);
       })
       .catch((error) => {
-        console.log(error)
-      })
-  }, [])
+        console.log(error);
+      });
+  }, [url]);
 
   return (
     <div>
@@ -181,7 +181,7 @@ const Coin = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Coin
+export default Coin;

@@ -3,6 +3,11 @@
     justify-content: center;
     align-items: center;
     text-decoration: underline;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar:active {
+    scale: 0.8;
 }
 
 .icon {
@@ -12,4 +17,8 @@
 
 .purple {
     color: #6900ff;
+}
+
+a {
+    text-decoration: none;
 }

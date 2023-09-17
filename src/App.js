@@ -7,10 +7,7 @@ import Coin from './routes/Coin';
 
 function App() {
 
-
   const [coins, setCoins] = useState([])
-  const [searchQuery, setSearchQuery] = useState('');
-
 
   const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false&locale=en"
 
@@ -24,7 +21,7 @@ function App() {
 
   return (
     <>
-      <Navbar onSearch={setSearchQuery} />
+      <Navbar />
       <Routes>
         <Route path='/' element={<Coins coins={coins} />} />
         <Route path='/coin' element={<Coin />} >
